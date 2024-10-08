@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Extreme Weather and Temperature Visualization</title>
+</head>
+
+<body>
+    <h1>Interactive Visualizations: Climate Insights for Australia</h1>
+    
+    <!-- Temperature Visualization -->
+    <h2>Average Max Temperature at Weather Stations (2000-2080)</h2>
+    <p>Use the slider below to explore the changes in maximum temperature at 45 weather stations across Australia over time.</p>
+    <div id="temperature_chart"></div>
+
+    <!-- Extreme Weather Visualization -->
+    <h2>Extreme Weather Events across Australia (2010-2019)</h2>
+    <p>Explore extreme weather events across Australian states.</p>
+    <div id="extreme_weather_chart"></div>
+
+    <!-- CO2 Emissions Choropleth Map -->
+    <h2>State CO2 Emissions Per Capita (1990-2017)</h2>
+    <p>Explore the CO2 emissions per capita across Australian states from 1990 to 2017.</p>
+    <div id="co2emission_chart"></div>
+
+    <script>
+        // Embed the Average Max Temperature visualization
+        vegaEmbed("#temperature_chart", "max_temp.vg.json").then(function(result) {
+            var view = result.view;
+
+            // Define the years and the interval for the animation
+            const years = [2000, 2020, 2040, 2080];
+            let yearIndex = 0;
+
+            function animateYear() {
+                view.signal("yearSelection", years[yearIndex]).run();
+                yearIndex = (yearIndex + 1) % years.length;  // Cycle through the years
+            }
+
+            // Set the interval for year change (e.g., every 2 seconds)
+            setInterval(animateYear, 2000);
+        }).catch(console.error);
+
+        // Embed the Extreme Weather Events Sunburst Chart
+        vegaEmbed("#extreme_weather_chart", "extremeweather.vg.json").then(function(result) {
+            console.log('Extreme Weather Visualization successfully embedded.');
+        }).catch(console.error);
+
+        // Embed the CO2 Emissions Choropleth Map
+        vegaEmbed("#co2emission_chart", "co2emission.vg.json").then(function(result) {
+            console.log('CO2 Emissions Choropleth Map successfully embedded.');
+        }).catch(console.error);
+    </script>
+
+</body>
+
+</html>
