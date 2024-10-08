@@ -14,10 +14,11 @@
 
 <body>
     <h1>Interactive Visualizations: Climate Insights for Australia</h1>
-    
+
     <!-- Temperature Visualization -->
     <h2>Average Max Temperature at Weather Stations (2000-2080)</h2>
-    <p>Use the slider below to explore the changes in maximum temperature at 45 weather stations across Australia over time.</p>
+    <p>Use the slider below to explore the changes in maximum temperature at 45 weather stations across Australia over
+        time.</p>
     <div id="temperature_chart"></div>
 
     <!-- Extreme Weather Visualization -->
@@ -30,9 +31,15 @@
     <p>Explore the CO2 emissions per capita across Australian states from 1990 to 2017.</p>
     <div id="co2emission_chart"></div>
 
+    <!-- Economic Impact Stream Graph -->
+    <h2>Projected Economic Impact of Climate Change on LGAs (2030-2100)</h2>
+    <p>Explore the projected economic impact of climate change on LGAs in Australia for the years 2030, 2050, and 2100.
+    </p>
+    <div id="economicimpact_chart"></div>
+
     <script>
         // Embed the Average Max Temperature visualization
-        vegaEmbed("#temperature_chart", "max_temp.vg.json").then(function(result) {
+        vegaEmbed("#temperature_chart", "max_temp.vg.json").then(function (result) {
             var view = result.view;
 
             // Define the years and the interval for the animation
@@ -49,13 +56,18 @@
         }).catch(console.error);
 
         // Embed the Extreme Weather Events Sunburst Chart
-        vegaEmbed("#extreme_weather_chart", "extremeweather.vg.json").then(function(result) {
+        vegaEmbed("#extreme_weather_chart", "extremeweather.vg.json").then(function (result) {
             console.log('Extreme Weather Visualization successfully embedded.');
         }).catch(console.error);
 
         // Embed the CO2 Emissions Choropleth Map
-        vegaEmbed("#co2emission_chart", "co2emission.vg.json").then(function(result) {
+        vegaEmbed("#co2emission_chart", "co2emission.vg.json").then(function (result) {
             console.log('CO2 Emissions Choropleth Map successfully embedded.');
+        }).catch(console.error);
+
+        // Embed the CO2 Emissions Choropleth Map
+        vegaEmbed("#economicimpact_chart", "economicimpact.vg.json").then(function (result) {
+            console.log('Economic Impact Streamgraph successfully embedded.');
         }).catch(console.error);
     </script>
 

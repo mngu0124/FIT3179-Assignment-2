@@ -1,0 +1,56 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 600,
+    "height": 400,
+    "data": {
+        "url": "economicimpact.csv",
+        "format": {
+            "type": "csv"
+        }
+    },
+    "mark": "area",
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "type": "ordinal",
+            "axis": {
+                "title": "Year"
+            }
+        },
+        "y": {
+            "aggregate": "sum",
+            "field": "Percentage",
+            "stack": "center",
+            "axis": {
+                "title": "Percentage of Impacted LGAs (%)"
+            }
+        },
+        "color": {
+            "field": "State",
+            "type": "nominal",
+            "scale": {
+                "scheme": "category20b"
+            },
+            "legend": {
+                "title": "State/Territory"
+            }
+        },
+        "tooltip": [
+            {
+                "field": "State",
+                "type": "nominal",
+                "title": "State"
+            },
+            {
+                "field": "Year",
+                "type": "ordinal",
+                "title": "Year"
+            },
+            {
+                "field": "Percentage",
+                "type": "quantitative",
+                "title": "Impacted LGAs (%)"
+            }
+        ]
+    }
+}
