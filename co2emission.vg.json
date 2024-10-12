@@ -1,110 +1,103 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 600,
-  "height": 550,
-  "title": "State CO2 Emissions Per Capita across Australia (1990-2017)",
-  "projection": {
-    "type": "equalEarth",
-    "center": [135, -25],
-    "scale": 800,
-    "clipExtent": [[0, 0], [600, 550]]
+  "height": 300,
+  "data": {
+    "url": "state-co2e-emissions-per-capita.csv"
   },
-  "params": [
-    {
-      "name": "yearSelection",
-      "value": 2017,
-      "bind": {
-        "input": "range",
-        "min": 1990,
-        "max": 2017,
-        "step": 1,
-        "name": "Year: "
-      }
-    }
-  ],
   "layer": [
     {
-      "data": {
-        "sphere": true
-      },
-      "mark": {
-        "type": "geoshape",
-        "fill": "#e0f7fa",
-        "stroke": "none"
+      "mark": "area",
+      "params": [
+        {
+          "name": "state",
+          "select": {
+            "type": "point",
+            "fields": [
+              "State"
+            ]
+          },
+          "bind": "legend"
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal",
+          "axis": {
+            "domain": false,
+            "format": "%Y",
+            "tickSize": 0
+          }
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "CO2e emissions (tonnes per capita)",
+          "stack": "center",
+          "axis": {
+            "title": "CO2 Emissions (Tonnes per Capita)"
+          }
+        },
+        "color": {
+          "field": "State",
+          "scale": {
+            "scheme": "category20b"
+          }
+        },
+        "opacity": {
+          "condition": {
+            "param": "state",
+            "value": 1
+          },
+          "value": 0.2
+        },
+        "tooltip": [
+          {
+            "field": "State",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "Year",
+            "type": "temporal",
+            "title": "Year"
+          },
+          {
+            "field": "CO2e emissions (tonnes per capita)",
+            "type": "quantitative",
+            "title": "CO2 Emissions (Tonnes per Capita)"
+          }
+        ]
       }
     },
     {
-      "data": {"graticule": {"step": [10, 10]}},
-      "mark": {"type": "geoshape", "stroke": "#cccccc", "strokeWidth": 1}
-    },
-    {
-      "data": {
-        "url": "ne_110m.json",
-        "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
-      },
-      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
-    },
-    {
-      "data": {
-        "url": "states.geojson",
-        "format": {
-          "type": "json",
-          "property": "features"
-        }
-      },
-      "transform": [
-        {
-          "lookup": "properties.STATE_NAME",
-          "from": {
-            "data": {
-              "values": [
-                {"StateName": "Victoria", "StateAbbreviation": "VIC"},
-                {"StateName": "New South Wales", "StateAbbreviation": "NSW"},
-                {"StateName": "Queensland", "StateAbbreviation": "QLD"},
-                {"StateName": "South Australia", "StateAbbreviation": "SA"},
-                {"StateName": "Western Australia", "StateAbbreviation": "WA"},
-                {"StateName": "Tasmania", "StateAbbreviation": "TAS"},
-                {"StateName": "Northern Territory", "StateAbbreviation": "NT"},
-                {"StateName": "Australian Capital Territory", "StateAbbreviation": "ACT"}
-              ]
-            },
-            "key": "StateName",
-            "fields": ["StateAbbreviation"]
-          }
-        },
-        {
-          "lookup": "StateAbbreviation",
-          "from": {
-            "data": {
-              "url": "state-co2e-emissions-per-capita.csv"
-            },
-            "key": "State",
-            "fields": ["CO2e emissions (tonnes per capita)", "Year"]
-          }
-        },
-        {
-          "filter": "datum['Year'] == yearSelection"
-        }
-      ],
       "mark": {
-        "type": "geoshape",
-        "stroke": "black",
-        "strokeWidth": 1
+        "type": "text",
+        "align": "left",
+        "dx": 5,
+        "dy": -10,
+        "fontSize": 14,
+        "fontStyle": "italic",
+        "fontWeight": "normal",
+        "color": "darkgrey"
       },
       "encoding": {
-        "color": {
-          "field": "CO2e emissions (tonnes per capita)",
-          "type": "quantitative",
-          "title": "CO2 Emissions (Tonnes per Capita)",
-          "scale": {
-            "scheme": "reds"
-          }
+        "text": {
+          "value": "Northern Territory has the highest emissions out of all the states"
         },
-        "tooltip": [
-          {"field": "properties.STATE_NAME", "type": "nominal", "title": "State"},
-          {"field": "Year", "type": "quantitative", "title": "Year"},
-          {"field": "CO2e emissions (tonnes per capita)", "type": "quantitative", "title": "Emissions (Tonnes per Capita)", "format": ".2f"}
-        ]
+        "x": {
+          "value": 180
+        },
+        "y": {
+          "value": 30
+        },
+        "opacity": {
+          "condition": {
+            "test": "length(data('state_store')) == 0",
+            "value": 1
+          },
+          "value": 0
+        }
       }
     }
   ]
