@@ -27,7 +27,8 @@
           "axis": {
             "domain": false,
             "format": "%Y",
-            "tickSize": 0
+            "tickSize": 0,
+            "grid": false
           }
         },
         "y": {
@@ -35,7 +36,8 @@
           "field": "CO2e emissions (tonnes per capita)",
           "stack": "center",
           "axis": {
-            "title": "CO2 Emissions (Tonnes per Capita)"
+            "title": "CO2 Emissions (Tonnes per Capita)",
+            "grid": false
           }
         },
         "color": {
