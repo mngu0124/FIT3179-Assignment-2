@@ -213,6 +213,11 @@
           "stroke": {
             "value": "darkgrey"
           }
+        },
+        "update": {
+          "opacity": {
+            "signal": "eventTypeFilter === 'All' ? 1 : 0"
+          }
         }
       }
     },
@@ -243,6 +248,11 @@
           },
           "align": {
             "value": "left"
+          }
+        },
+        "update": {
+          "opacity": {
+            "signal": "eventTypeFilter === 'All' ? 1 : 0"
           }
         }
       }
