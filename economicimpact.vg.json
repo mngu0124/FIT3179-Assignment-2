@@ -1,56 +1,316 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 600,
+    "width": 700,
     "height": 400,
-    "data": {
-        "url": "economicimpact.csv",
-        "format": {
-            "type": "csv"
+    "config": {
+        "view": {
+            "stroke": null
         }
     },
-    "mark": "area",
-    "encoding": {
-        "x": {
-            "field": "Year",
-            "type": "ordinal",
-            "axis": {
-                "title": "Year"
-            }
-        },
-        "y": {
-            "aggregate": "sum",
-            "field": "Percentage",
-            "stack": "center",
-            "axis": {
-                "title": "Percentage of Impacted LGAs (%)"
-            }
-        },
-        "color": {
-            "field": "State",
-            "type": "nominal",
-            "scale": {
-                "scheme": "category20b"
-            },
-            "legend": {
-                "title": "State/Territory"
-            }
-        },
-        "tooltip": [
+    "data": {
+        "values": [
             {
-                "field": "State",
-                "type": "nominal",
-                "title": "State"
+                "State": "New South Wales",
+                "Year": 2030,
+                "Percentage": 23
             },
             {
-                "field": "Year",
-                "type": "ordinal",
-                "title": "Year"
+                "State": "New South Wales",
+                "Year": 2050,
+                "Percentage": 23
             },
             {
-                "field": "Percentage",
-                "type": "quantitative",
-                "title": "Impacted LGAs (%)"
+                "State": "New South Wales",
+                "Year": 2100,
+                "Percentage": 28
+            },
+            {
+                "State": "Victoria",
+                "Year": 2030,
+                "Percentage": 10
+            },
+            {
+                "State": "Victoria",
+                "Year": 2050,
+                "Percentage": 15
+            },
+            {
+                "State": "Victoria",
+                "Year": 2100,
+                "Percentage": 23
+            },
+            {
+                "State": "Queensland",
+                "Year": 2030,
+                "Percentage": 52
+            },
+            {
+                "State": "Queensland",
+                "Year": 2050,
+                "Percentage": 52
+            },
+            {
+                "State": "Queensland",
+                "Year": 2100,
+                "Percentage": 64
+            },
+            {
+                "State": "South Australia",
+                "Year": 2030,
+                "Percentage": 8
+            },
+            {
+                "State": "South Australia",
+                "Year": 2050,
+                "Percentage": 8
+            },
+            {
+                "State": "South Australia",
+                "Year": 2100,
+                "Percentage": 10
+            },
+            {
+                "State": "Western Australia",
+                "Year": 2030,
+                "Percentage": 11
+            },
+            {
+                "State": "Western Australia",
+                "Year": 2050,
+                "Percentage": 11
+            },
+            {
+                "State": "Western Australia",
+                "Year": 2100,
+                "Percentage": 12
+            },
+            {
+                "State": "Tasmania",
+                "Year": 2030,
+                "Percentage": 3
+            },
+            {
+                "State": "Tasmania",
+                "Year": 2050,
+                "Percentage": 3
+            },
+            {
+                "State": "Tasmania",
+                "Year": 2100,
+                "Percentage": 3
+            },
+            {
+                "State": "Northern Territory",
+                "Year": 2030,
+                "Percentage": 24
+            },
+            {
+                "State": "Northern Territory",
+                "Year": 2050,
+                "Percentage": 24
+            },
+            {
+                "State": "Northern Territory",
+                "Year": 2100,
+                "Percentage": 24
+            },
+            {
+                "State": "Australian Capital Territory",
+                "Year": 2030,
+                "Percentage": 0
+            },
+            {
+                "State": "Australian Capital Territory",
+                "Year": 2050,
+                "Percentage": 0
+            },
+            {
+                "State": "Australian Capital Territory",
+                "Year": 2100,
+                "Percentage": 0
             }
         ]
-    }
+    },
+    "transform": [
+        {
+            "window": [
+                {
+                    "op": "rank",
+                    "as": "Rank"
+                }
+            ],
+            "sort": [
+                {
+                    "field": "Percentage",
+                    "order": "descending"
+                }
+            ],
+            "groupby": [
+                "Year"
+            ]
+        },
+        {
+            "window": [
+                {
+                    "op": "row_number",
+                    "as": "row_num"
+                }
+            ],
+            "sort": [
+                {
+                    "field": "Year",
+                    "order": "descending"
+                }
+            ],
+            "groupby": [
+                "State"
+            ]
+        }
+    ],
+    "layer": [
+        {
+            "mark": {
+                "type": "line",
+                "point": {
+                    "size": 300,
+                    "filled": true
+                },
+                "interpolate": "monotone"
+            },
+            "encoding": {
+                "x": {
+                    "field": "Year",
+                    "type": "ordinal",
+                    "axis": {
+                        "title": "Year",
+                        "labelAngle": 0,
+                        "ticks": false,
+                        "grid": false,
+                        "domain": false
+                    }
+                },
+                "y": {
+                    "field": "Rank",
+                    "type": "ordinal",
+                    "axis": null
+                },
+                "color": {
+                    "field": "State",
+                    "type": "nominal",
+                    "scale": {
+                        "scheme": "category20b"
+                    },
+                    "legend": null,
+                    "title": "State"
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "circle",
+                "size": 200
+            },
+            "encoding": {
+                "x": {
+                    "field": "Year",
+                    "type": "ordinal",
+                    "axis": {
+                        "ticks": false,
+                        "grid": false,
+                        "domain": false
+                    }
+                },
+                "y": {
+                    "field": "Rank",
+                    "type": "ordinal",
+                    "axis": null
+                },
+                "color": {
+                    "field": "State",
+                    "type": "nominal",
+                    "legend": null
+                },
+                "tooltip": [
+                    {
+                        "field": "State",
+                        "type": "nominal",
+                        "title": "State"
+                    },
+                    {
+                        "field": "Year",
+                        "type": "ordinal",
+                        "title": "Year"
+                    },
+                    {
+                        "field": "Percentage",
+                        "type": "quantitative",
+                        "title": "Impact (%)"
+                    }
+                ]
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "center",
+                "dy": 0,
+                "fontSize": 12
+            },
+            "encoding": {
+                "text": {
+                    "field": "Rank",
+                    "type": "ordinal"
+                },
+                "x": {
+                    "field": "Year",
+                    "type": "ordinal",
+                    "axis": {
+                        "ticks": false,
+                        "grid": false,
+                        "domain": false
+                    }
+                },
+                "y": {
+                    "field": "Rank",
+                    "type": "ordinal",
+                    "axis": null
+                },
+                "color": {
+                    "value": "white"
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": 15,
+                "fontSize": 12,
+                "fontWeight": "bold"
+            },
+            "transform": [
+                {
+                    "filter": "datum.row_num == 1"
+                }
+            ],
+            "encoding": {
+                "text": {
+                    "field": "State"
+                },
+                "x": {
+                    "field": "Year",
+                    "type": "ordinal"
+                },
+                "y": {
+                    "field": "Rank",
+                    "type": "ordinal"
+                },
+                "color": {
+                    "field": "State",
+                    "type": "nominal",
+                    "legend": null
+                }
+            }
+        }
+    ]
 }
