@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "title": "Extreme Weather Events across Australia (2010-2019)",
-  "width": 600,
-  "height": 600,
+  "width": 400,
+  "height": 400,
   "padding": {
     "left": 5,
     "right": 250,
@@ -196,16 +196,16 @@
       "encode": {
         "enter": {
           "x": {
-            "value": 350
+            "value": 250
           },
           "y": {
-            "value": 480
+            "value": 250
           },
           "x2": {
-            "value": 500
+            "value": 360
           },
           "y2": {
-            "value": 580
+            "value": 380
           },
           "strokeWidth": {
             "value": 2
@@ -226,10 +226,10 @@
       "encode": {
         "enter": {
           "x": {
-            "value": 420
+            "value": 300
           },
           "y": {
-            "value": 600
+            "value": 400
           },
           "text": {
             "value": "Wind is the most frequent event in NSW"
@@ -283,7 +283,8 @@
       "orient": "right",
       "type": "gradient",
       "labelFontSize": 14,
-      "titleFontSize": 16
+      "titleFontSize": 16,
+      "gradientLength": 90
     }
   ]
 }
