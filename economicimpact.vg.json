@@ -2,6 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 600,
     "height": 400,
+    "background": "rgb(205, 207, 236)",
     "config": {
         "view": {
             "stroke": null

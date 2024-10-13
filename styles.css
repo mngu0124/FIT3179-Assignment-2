@@ -1,21 +1,21 @@
 body {
     font-family: 'Source Sans Pro', sans-serif;
-    background-color: #f0f0f0;
+    background-color: #282771;
     margin: 0;
     padding: 0;
-    color: #333;
+    color: #575365;
     line-height: 1.6;
 }
 
 .page {
     max-width: 1200px;
     margin: 0 auto;
-    background-color: white;
+    background-color: rgb(205, 207, 236);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 header {
-    background-color: #1a1a1a;
+    background-color: #15103c;
     color: white;
     padding: 40px 20px;
     text-align: center;
@@ -181,7 +181,7 @@ footer a:hover {
 .cta-item {
     flex: 1;
     text-align: center;
-    background-color: #f0f0f0;
+    background-color: #888bec;
     padding: 1rem;
     border-radius: 5px;
 }
@@ -198,14 +198,14 @@ footer a:hover {
 .cta-link {
     display: inline-block;
     padding: 0.5rem 1rem;
-    background-color: #4CAF50;
+    background-color: #6c7cc5;
     color: white;
     text-decoration: none;
     border-radius: 3px;
 }
 
 .metadata {
-    background-color: #f0f0f0;
+    background-color: #888bec;
     padding: 1rem;
     border-radius: 5px;
 }
