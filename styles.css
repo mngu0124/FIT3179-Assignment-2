@@ -64,8 +64,8 @@ h2 {
 
 .two-column {
     display: flex;
-    gap: 30px;
-    margin-bottom: 30px;
+    gap: 2rem;
+    align-items: flex-start;
 }
 
 .two-column section {
@@ -98,11 +98,11 @@ footer a:hover {
 .overlay-text {
     position: absolute;
     top: 10px;
-    left: 800px;
+    left: 850px;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 10px;
     border-radius: 5px;
-    max-width: 300px;
+    max-width: 200px;
     font-size: 14px;
     z-index: 1000;
 }
@@ -136,4 +136,81 @@ footer a:hover {
     max-width: 300px;
     font-size: 14px;
     z-index: 1000;
+}
+
+.economic-impact-section {
+    flex: 3;
+}
+
+.conclusion {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.conclusion h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.conclusion p {
+    margin-bottom: 1rem;
+}
+
+.conclusion ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.conclusion li {
+    margin-bottom: 0.5rem;
+}
+
+.cta-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.cta-item {
+    flex: 1;
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.cta-item h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.cta-item p {
+    margin-bottom: 0.5rem;
+}
+
+.cta-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+    .two-column {
+        flex-direction: column;
+    }
+
+    .economic-impact-section,
+    .conclusion {
+        width: 100%;
+    }
+
+    .cta-container {
+        flex-direction: column;
+    }
 }

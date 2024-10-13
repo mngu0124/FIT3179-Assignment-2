@@ -25,56 +25,138 @@
         <!-- Title Section -->
         <header>
             <h1 class="page-title">Climate Insights: Australia's Changing Landscape</h1>
-            <p class="page-intro">A visual journey through Australia's climate and environmental shifts</p>
+            <p class="page-intro">A visual journey through Australia's climate and environmental shifts from 1990 to
+                2080</p>
         </header>
 
         <!-- Main content -->
         <main>
+            <!-- Introduction Section -->
+            <section class="intro">
+                <h2>Unraveling Australia's Climate Story</h2>
+                <p>As Australia faces unprecedented environmental challenges, this interactive magazine invites you to
+                    explore the data behind our changing climate. From rising temperatures to economic impacts, join us
+                    in uncovering the insights that will shape our future.</p>
+            </section>
+
             <!-- Temperature Visualization -->
-            <div class="pure-g">
-                <div class="pure-u-1">
-                    <h2>Average Max Temperature at Weather Stations (2000-2080)</h2>
-                    <div class="vis-container temperature-container">
-                        <div id="temperature_chart"></div>
-                        <div class="overlay-text temperature-overlay">
-                            <p>This visualization shows the projected changes in maximum temperature across 45 weather
-                                stations in Australia from 2000 to 2080. The animation cycles through key years,
-                                illustrating the expected temperature increases due to climate change.</p>
+            <section class="temperature-section">
+                <h2>The Heat is On: Rising Temperatures Across Australia</h2>
+                <p class="section-intro">Developed by climate scientists using data from the Australian Bureau of
+                    Meteorology, this visualization reveals temperature trends from 2000 to 2080.</p>
+                <div class="pure-g">
+                    <div class="pure-u-1">
+                        <div class="vis-container temperature-container">
+                            <div id="temperature_chart"></div>
+                            <div class="overlay-text temperature-overlay">
+                                <p>This animation shows projected changes in maximum temperature across 45 weather
+                                    stations in Australia. Notice how the colors shift towards warmer hues as we
+                                    progress through the decades, indicating a clear warming trend.</p>
+                                <ul>
+                                    <li>2000-2020: Observe the initial temperature distribution.</li>
+                                    <li>2040: Note the expansion of warmer areas, particularly in central Australia.
+                                    </li>
+                                    <li>2080: See the dramatic shift towards higher temperatures across the continent.
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Extreme Weather and CO2 Emissions -->
             <div class="two-column">
-                <section>
+                <section class="extreme-weather-section">
                     <h2>Nature's Fury Unleashed</h2>
-                    <p class="intro-text">Explore the surge in extreme weather events that have reshaped Australia's
-                        landscape from 2010 to 2019.</p>
+                    <p class="intro-text">Our team of data experts has compiled this comprehensive view of extreme
+                        weather events from 2010 to 2019, crucial for policymakers and community planners.</p>
                     <div id="extreme_weather_chart" class="vis-container"></div>
+                    <div class="chart-annotation">
+                        <p>This sunburst chart reveals the increasing frequency and intensity of extreme weather events
+                            over the past decade. Pay attention to:</p>
+                        <ul>
+                            <li>The dominance of bushfires and their widespread impact</li>
+                            <li>The rise in severe storms and cyclones in coastal regions</li>
+                            <li>The persistent threat of drought in rural areas</li>
+                        </ul>
+                    </div>
                 </section>
-                <section>
+                <section class="emissions-section">
                     <h2>The Carbon Footprint</h2>
-                    <p class="intro-text">Uncover the state-by-state story of CO2 emissions per capita from 1990 to
-                        2017.</p>
+                    <p class="intro-text">Using Australian Bureau of Statistics data, this state-by-state CO2 emissions
+                        analysis (1990-2017) offers insights for industry leaders and environmental advocates.</p>
                     <div id="co2emission_chart" class="vis-container"></div>
+                    <div class="chart-annotation">
+                        <p>This choropleth map illustrates the changing landscape of carbon emissions across Australian
+                            states:</p>
+                        <ul>
+                            <li>Notice the variations between states and territories</li>
+                            <li>Observe any trends of increase or decrease over time</li>
+                            <li>Consider how population density and industrial activity might influence these patterns
+                            </li>
+                        </ul>
+                    </div>
                 </section>
             </div>
 
-            <!-- Economic Impact Stream Graph -->
-            <section class="full-width">
-                <h2>The Economic Ripple Effect</h2>
-                <p class="intro-text">Visualize the projected economic impact of climate change on Local Government
-                    Areas from 2030 to 2100.</p>
-                <div id="economicimpact_chart" class="vis-container"></div>
-            </section>
-        </main>
+            <!-- Economic Impact Stream Graph and Conclusion -->
+            <div class="two-column">
+                <section class="economic-impact-section">
+                    <h2>The Economic Ripple Effect</h2>
+                    <p class="intro-text">Based on projections from CSIRO Climate Change models, this visualization
+                        helps local government areas understand potential economic impacts from 2030 to 2100.</p>
+                    <div id="economicimpact_chart" class="vis-container"></div>
+                    <div class="chart-annotation">
+                        <p>This streamgraph illustrates the dynamic economic impacts of climate change across various
+                            sectors over time, highlighting the need for adaptive urban planning and resource allocation
+                            strategies.</p>
+                    </div>
+                </section>
 
-        <!-- Footer Section -->
-        <footer>
-            <p>Data visualizations by <a href="#">FIT3179 Teaching Team</a>. Sources: <a href="#">Data Repository</a>.
-            </p>
-        </footer>
+                <!-- Conclusion Section -->
+                <section class="conclusion">
+                    <h2>Charting a Sustainable Future</h2>
+
+                    <p>These visualizations tell a compelling story of Australia's changing environment and economy. As
+                        we face these challenges together, we must use these insights to inform decisions and drive
+                        action.</p>
+                    <ul>
+                        <li>Rising temperatures demand adaptive strategies</li>
+                        <li>Extreme weather events require improved resilience</li>
+                        <li>Shifting economic landscapes call for innovative planning</li>
+                    </ul>
+                    <div class="cta-container">
+                        <div class="cta-item">
+                            <h3>Explore</h3>
+                            <p>Dive deeper into the data</p>
+                            <a href="#" class="cta-link">View Full Report</a>
+                        </div>
+                        <div class="cta-item">
+                            <h3>Share</h3>
+                            <p>Spread awareness</p>
+                            <a href="#" class="cta-link">Share Insights</a>
+                        </div>
+                        <div class="cta-item">
+                            <h3>Act</h3>
+                            <p>Make a <br>difference</p>
+                            <a href="#" class="cta-link">Get <br>Involved</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Footer Section -->
+            <footer>
+                <p>Data visualizations created by the FIT3179 Climate Insights Team | Last updated: May 2023</p>
+                <p>Sources: Australian Bureau of Meteorology, Australian Bureau of Statistics, CSIRO Climate Change
+                    Projections</p>
+                <p>For more information or to access our comprehensive reports, visit our <a href="#">Data
+                        Repository</a> or
+                    contact us at <a href="mailto:climate.insights@example.com">climate.insights@example.com</a></p>
+            </footer>
+
+        </main>
 
     </div> <!-- end page -->
 
@@ -103,7 +185,7 @@
 
         // Embed the CO2 Emissions Choropleth Map
         vegaEmbed("#co2emission_chart", "co2emission.vg.json").then(function (result) {
-            console.log('CO2 Emissions Choropleth Map successfully embedded.');
+            console.log('CO2 Emissions Streamgraph successfully embedded.');
         }).catch(console.error);
 
         // Embed the Economic Impact Stream Graph
