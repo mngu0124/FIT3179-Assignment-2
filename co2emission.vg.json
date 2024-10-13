@@ -6,6 +6,19 @@
   "config": {
     "view": {
       "stroke": null
+    },
+    "font": "Source Sans Pro",
+    "title": {
+      "font": "Playfair Display",
+      "fontWeight": 700
+    },
+    "axis": {
+      "labelFont": "Source Sans Pro",
+      "titleFont": "Source Sans Pro"
+    },
+    "legend": {
+      "labelFont": "Source Sans Pro",
+      "titleFont": "Source Sans Pro"
     }
   },
   "padding": {
@@ -93,7 +106,8 @@
         "fontSize": 14,
         "fontStyle": "italic",
         "fontWeight": "normal",
-        "color": "darkgrey"
+        "color": "darkgrey",
+        "font": "Source Sans Pro"
       },
       "encoding": {
         "text": {

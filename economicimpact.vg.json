@@ -6,6 +6,25 @@
     "config": {
         "view": {
             "stroke": null
+        },
+        "font": "Source Sans Pro",
+        "axis": {
+            "labelFont": "Source Sans Pro",
+            "titleFont": "Source Sans Pro"
+        },
+        "header": {
+            "labelFont": "Source Sans Pro",
+            "titleFont": "Source Sans Pro"
+        },
+        "legend": {
+            "labelFont": "Source Sans Pro",
+            "titleFont": "Source Sans Pro"
+        },
+        "title": {
+            "font": "Source Sans Pro"
+        },
+        "mark": {
+            "font": "Source Sans Pro"
         }
     },
     "padding": {
@@ -204,7 +223,7 @@
                         "grid": false,
                         "domain": false,
                         "labels": false,
-                        "titlePadding": -90
+                        "titlePadding": -80
                     }
                 },
                 "color": {

@@ -6,6 +6,21 @@
   "config": {
     "view": {
       "stroke": null
+    },
+    "font": "Source Sans Pro",
+    "axis": {
+      "labelFont": "Source Sans Pro",
+      "titleFont": "Source Sans Pro"
+    },
+    "legend": {
+      "labelFont": "Source Sans Pro",
+      "titleFont": "Source Sans Pro"
+    },
+    "title": {
+      "font": "Source Sans Pro"
+    },
+    "text": {
+      "font": "Source Sans Pro"
     }
   },
   "padding": {
@@ -213,7 +228,8 @@
             "dx": -370,
             "dy": -200,
             "fontWeight": "normal",
-            "fontStyle": "italic"
+            "fontStyle": "italic",
+            "font": "Source Sans Pro"
           },
           "encoding": {
             "longitude": {
@@ -240,7 +256,8 @@
             "dx": -370,
             "dy": -185,
             "fontWeight": "normal",
-            "fontStyle": "italic"
+            "fontStyle": "italic",
+            "font": "Source Sans Pro"
           },
           "encoding": {
             "longitude": {
@@ -267,7 +284,8 @@
             "dx": -370,
             "dy": -170,
             "fontWeight": "normal",
-            "fontStyle": "italic"
+            "fontStyle": "italic",
+            "font": "Source Sans Pro"
           },
           "encoding": {
             "longitude": {
