@@ -1,11 +1,17 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 700,
+    "width": 800,
     "height": 400,
     "config": {
         "view": {
             "stroke": null
         }
+    },
+    "padding": {
+        "left": -70,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
     },
     "data": {
         "values": [
@@ -192,7 +198,13 @@
                 "y": {
                     "field": "Rank",
                     "type": "ordinal",
-                    "axis": null
+                    "axis": {
+                        "ticks": false,
+                        "grid": false,
+                        "domain": false,
+                        "labels": false,
+                        "titlePadding": -90
+                    }
                 },
                 "color": {
                     "field": "State",
@@ -223,7 +235,12 @@
                 "y": {
                     "field": "Rank",
                     "type": "ordinal",
-                    "axis": null
+                    "axis": {
+                        "ticks": false,
+                        "grid": false,
+                        "domain": false,
+                        "labels": false
+                    }
                 },
                 "color": {
                     "field": "State",
@@ -273,7 +290,12 @@
                 "y": {
                     "field": "Rank",
                     "type": "ordinal",
-                    "axis": null
+                    "axis": {
+                        "ticks": false,
+                        "grid": false,
+                        "domain": false,
+                        "labels": false
+                    }
                 },
                 "color": {
                     "value": "white"
@@ -309,6 +331,33 @@
                     "field": "State",
                     "type": "nominal",
                     "legend": null
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": 125,
+                "dy": -25,
+                "fontSize": 10,
+                "fontStyle": "italic",
+                "fontWeight": "normal"
+            },
+            "encoding": {
+                "text": {
+                    "value": "Victoria and Western Australia show a steady increase in projected climate impact over the years."
+                },
+                "x": {
+                    "datum": 2030,
+                    "type": "ordinal"
+                },
+                "y": {
+                    "datum": 5,
+                    "type": "ordinal"
+                },
+                "color": {
+                    "value": "darkgrey"
                 }
             }
         }

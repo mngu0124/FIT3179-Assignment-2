@@ -2,6 +2,11 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 600,
   "height": 300,
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  },
   "data": {
     "url": "state-co2e-emissions-per-capita.csv"
   },
