@@ -8,34 +8,75 @@
     <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <!-- Import pure.css for grid layout -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+        integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <title>Extreme Weather and Temperature Visualization</title>
+
+    <title>Climate Insights: Australia's Changing Landscape</title>
 </head>
 
 <body>
-    <h1>Climate Insights for Australia</h1>
+    <div class="page">
+        <!-- Title Section -->
+        <header>
+            <h1 class="page-title">Climate Insights: Australia's Changing Landscape</h1>
+            <p class="page-intro">A visual journey through Australia's climate and environmental shifts</p>
+        </header>
 
-    <!-- Temperature Visualization -->
-    <h2>Average Max Temperature at Weather Stations (2000-2080)</h2>
-    <p>Use the slider below to explore the changes in maximum temperature at 45 weather stations across Australia over
-        time.</p>
-    <div id="temperature_chart"></div>
+        <!-- Main content -->
+        <main>
+            <!-- Temperature Visualization -->
+            <div class="pure-g">
+                <div class="pure-u-1">
+                    <h2>Average Max Temperature at Weather Stations (2000-2080)</h2>
+                    <div class="vis-container">
+                        <div id="temperature_chart"></div>
+                        <div class="overlay-text">
+                            <p>This visualization shows the projected changes in maximum temperature across 45 weather
+                                stations in Australia from 2000 to 2080. The animation cycles through key years,
+                                illustrating the expected temperature increases due to climate change.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <!-- Extreme Weather Visualization -->
-    <h2>Extreme Weather Events across Australia (2010-2019)</h2>
-    <p>Explore extreme weather events across Australian states.</p>
-    <div id="extreme_weather_chart"></div>
+            <!-- Extreme Weather and CO2 Emissions -->
+            <div class="two-column">
+                <section>
+                    <h2>Nature's Fury Unleashed</h2>
+                    <p class="intro-text">Explore the surge in extreme weather events that have reshaped Australia's
+                        landscape from 2010 to 2019.</p>
+                    <div id="extreme_weather_chart" class="vis-container"></div>
+                </section>
+                <section>
+                    <h2>The Carbon Footprint</h2>
+                    <p class="intro-text">Uncover the state-by-state story of CO2 emissions per capita from 1990 to
+                        2017.</p>
+                    <div id="co2emission_chart" class="vis-container"></div>
+                </section>
+            </div>
 
-    <!-- CO2 Emissions Choropleth Map -->
-    <h2>State CO2 Emissions Per Capita (1990-2017)</h2>
-    <p>Explore the CO2 emissions per capita across Australian states from 1990 to 2017.</p>
-    <div id="co2emission_chart"></div>
+            <!-- Economic Impact Stream Graph -->
+            <section class="full-width">
+                <h2>The Economic Ripple Effect</h2>
+                <p class="intro-text">Visualize the projected economic impact of climate change on Local Government
+                    Areas from 2030 to 2100.</p>
+                <div id="economicimpact_chart" class="vis-container"></div>
+            </section>
+        </main>
 
-    <!-- Economic Impact Stream Graph -->
-    <h2>Projected Economic Impact of Climate Change on LGAs (2030-2100)</h2>
-    <p>Explore the projected economic impact of climate change on LGAs in Australia for the years 2030, 2050, and 2100.
-    </p>
-    <div id="economicimpact_chart"></div>
+        <!-- Footer Section -->
+        <footer>
+            <p>Data visualizations by <a href="#">FIT3179 Teaching Team</a>. Sources: <a href="#">Data Repository</a>.
+            </p>
+        </footer>
+
+    </div> <!-- end page -->
 
     <script>
         // Embed the Average Max Temperature visualization
@@ -65,7 +106,7 @@
             console.log('CO2 Emissions Choropleth Map successfully embedded.');
         }).catch(console.error);
 
-        // Embed the CO2 Emissions Choropleth Map
+        // Embed the Economic Impact Stream Graph
         vegaEmbed("#economicimpact_chart", "economicimpact.vg.json").then(function (result) {
             console.log('Economic Impact Streamgraph successfully embedded.');
         }).catch(console.error);
