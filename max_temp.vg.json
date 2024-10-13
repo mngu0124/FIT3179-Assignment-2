@@ -129,6 +129,10 @@
           "type": "quantitative"
         },
         "color": {
+          "condition": {
+            "test": "datum.Location === 'Albury'",
+            "value": "blue"
+          },
           "field": "Average_Max_Temperature",
           "type": "quantitative",
           "title": "Max Temperature (°C)",
@@ -179,6 +183,127 @@
         },
         {
           "filter": "datum.Year == yearSelection"
+        }
+      ]
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "Location": "Albury",
+            "Latitude": -36.08,
+            "Longitude": 146.92,
+            "AnnotationLine1": "In Albury, the average max temperature",
+            "AnnotationLine2": "increases from 29.6°C in 2000",
+            "AnnotationLine3": "to 30.05°C in 2080.",
+            "Label_Latitude": -24,
+            "Label_Longitude": 132
+          }
+        ]
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": -370,
+            "dy": -200,
+            "fontWeight": "normal",
+            "fontStyle": "italic"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "Longitude"
+            },
+            "latitude": {
+              "field": "Latitude"
+            },
+            "text": {
+              "field": "AnnotationLine1"
+            },
+            "color": {
+              "value": "darkgrey"
+            },
+            "size": {
+              "value": 14
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": -370,
+            "dy": -185,
+            "fontWeight": "normal",
+            "fontStyle": "italic"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "Longitude"
+            },
+            "latitude": {
+              "field": "Latitude"
+            },
+            "text": {
+              "field": "AnnotationLine2"
+            },
+            "color": {
+              "value": "darkgrey"
+            },
+            "size": {
+              "value": 14
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": -370,
+            "dy": -170,
+            "fontWeight": "normal",
+            "fontStyle": "italic"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "Longitude"
+            },
+            "latitude": {
+              "field": "Latitude"
+            },
+            "text": {
+              "field": "AnnotationLine3"
+            },
+            "color": {
+              "value": "darkgrey"
+            },
+            "size": {
+              "value": 14
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "rule"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "Label_Longitude"
+            },
+            "latitude": {
+              "field": "Label_Latitude"
+            },
+            "longitude2": {
+              "field": "Longitude"
+            },
+            "latitude2": {
+              "field": "Latitude"
+            },
+            "color": {
+              "value": "darkgrey"
+            }
+          }
         }
       ]
     }
