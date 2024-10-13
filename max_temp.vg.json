@@ -36,10 +36,13 @@
       "name": "yearSelection",
       "value": 2000,
       "bind": {
-        "input": "range",
-        "min": 2000,
-        "max": 2080,
-        "step": 20,
+        "input": "select",
+        "options": [
+          2000,
+          2020,
+          2040,
+          2080
+        ],
         "name": "Year: "
       }
     }
