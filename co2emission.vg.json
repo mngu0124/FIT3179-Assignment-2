@@ -1,11 +1,17 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 490,
+  "width": 460,
   "height": 400,
   "config": {
     "view": {
       "stroke": null
     }
+  },
+  "padding": {
+    "left": 0,
+    "right": 0,
+    "top": 0,
+    "bottom": 0
   },
   "data": {
     "url": "state-co2e-emissions-per-capita.csv"
@@ -93,10 +99,10 @@
           "value": "Northern Territory has the highest emissions out of all the states"
         },
         "x": {
-          "value": 100
+          "value": 40
         },
         "y": {
-          "value": 30
+          "value": 35
         },
         "opacity": {
           "condition": {

@@ -145,13 +145,16 @@
           },
           "legend": {
             "orient": "none",
-            "direction": "horizontal",
-            "legendX": 50,
-            "legendY": 530,
+            "direction": "vertical",
+            "legendX": 80,
+            "legendY": 110,
             "title": "Max Temperature (°C)",
-            "symbolSize": 500,
-            "columns": 10,
-            "labelLimit": 200
+            "titleFontSize": 14,
+            "labelFontSize": 12,
+            "symbolSize": 1000,
+            "columns": 1,
+            "labelLimit": 250,
+            "gradientLength": 400
           }
         },
         "size": {

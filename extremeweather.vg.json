@@ -5,7 +5,7 @@
   "height": 400,
   "padding": {
     "left": 5,
-    "right": 100,
+    "right": 140,
     "top": 5,
     "bottom": 5
   },
@@ -226,7 +226,7 @@
       "encode": {
         "enter": {
           "x": {
-            "value": 300
+            "value": 285
           },
           "y": {
             "value": 400
